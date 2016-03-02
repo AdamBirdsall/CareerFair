@@ -14,6 +14,7 @@
 		6BE5FB4F1C879154006FDCC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE5FB4D1C879154006FDCC2 /* LaunchScreen.storyboard */; };
 		6BE5FB5A1C879154006FDCC2 /* Career_FairTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5FB591C879154006FDCC2 /* Career_FairTests.swift */; };
 		6BE5FB651C879154006FDCC2 /* Career_FairUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5FB641C879154006FDCC2 /* Career_FairUITests.swift */; };
+		6BEA48F11C8798880099BA1A /* tmpicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BEA48F01C8798880099BA1A /* tmpicture.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		6BE5FB601C879154006FDCC2 /* Career FairUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Career FairUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE5FB641C879154006FDCC2 /* Career_FairUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Career_FairUITests.swift; sourceTree = "<group>"; };
 		6BE5FB661C879154006FDCC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BEA48F01C8798880099BA1A /* tmpicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmpicture.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				6BE5FB4B1C879154006FDCC2 /* Assets.xcassets */,
 				6BE5FB4D1C879154006FDCC2 /* LaunchScreen.storyboard */,
 				6BE5FB501C879154006FDCC2 /* Info.plist */,
+				6BEA48F01C8798880099BA1A /* tmpicture.png */,
 			);
 			path = "Career Fair";
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BE5FB4F1C879154006FDCC2 /* LaunchScreen.storyboard in Resources */,
+				6BEA48F11C8798880099BA1A /* tmpicture.png in Resources */,
 				6BE5FB4C1C879154006FDCC2 /* Assets.xcassets in Resources */,
 				6BE5FB4A1C879154006FDCC2 /* Main.storyboard in Resources */,
 			);
@@ -484,6 +488,7 @@
 				6BE5FB6B1C879154006FDCC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BE5FB6C1C879154006FDCC2 /* Build configuration list for PBXNativeTarget "Career FairTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +497,7 @@
 				6BE5FB6E1C879154006FDCC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BE5FB6F1C879154006FDCC2 /* Build configuration list for PBXNativeTarget "Career FairUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +506,7 @@
 				6BE5FB711C879154006FDCC2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
