@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     
     
     // Google form URL
-    // https://docs.google.com/forms/d/1OD_2Zs-TzZv3E_ZfFjnSn1I6CIXO-Ma8b3UUm2JDKjc/formResponse
+    // https://docs.google.com/forms/d/1uWmQ9CmC_As92Xv4jr33fT_1al7P2S2P1TGAGX4LvJs/formResponse
     
     // Name
     // entry.2005620554
@@ -35,30 +35,36 @@ class ViewController: UIViewController {
     // Email
     // entry.1045781291
     
-    // Address
-    // entry.1065046570
+    // Comments
+    // entry.839337160
+    
+    // Final URL
+    // https://docs.google.com/forms/d/1uWmQ9CmC_As92Xv4jr33fT_1al7P2S2P1TGAGX4LvJs/formResponse? +
+        // entry.2005620554=AdamAdam&entry.1045781291=Adam@gmail.com&entry.839337160=test&submit=Submit
+    
     
     @IBAction func clickSubmit(sender: AnyObject) {
         
+        //  https://docs.google.com/forms/d/YOUR_FORM_ID/formResponse?entry.1748727384=test&entry.1949164265=test&submit=Submit
         
         // Google sheets way
         //*********************
-        let url = NSURL(string: "https://docs.google.com/forms/d/1OD_2Zs-TzZv3E_ZfFjnSn1I6CIXO-Ma8b3UUm2JDKjc/formResponse")
-        var postData = "entry.2005620554" + "=" + firstName.text!
-        postData += "&" + "entry.1045781291" + "=" + lastName.text!
-        postData += "&" + "entry.1065046570" + "=" + emailField.text!
+        let url = NSURL(string: "https://docs.google.com/forms/d/1uWmQ9CmC_As92Xv4jr33fT_1al7P2S2P1TGAGX4LvJs/formResponse")
+
+        var postData = "entry.2005620554" + "=" + firstName.text! + lastName.text!
+        postData += "&" + "entry.1045781291" + "=" + emailField.text!
         postData += "&submit=Submit"
+        
         
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
         request.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.HTTPBody = postData.dataUsingEncoding(NSUTF8StringEncoding)
-//        var connection = NSURLConnection(request: request, delegate: nil, startImmediately: true)
-        
-        
+        _ = NSURLSession.sharedSession().dataTaskWithRequest(request).resume()
+   
         // Parse way
         //*********************
-        let newStudent = PFObject(className: "SignUps")
+        /*let newStudent = PFObject(className: "SignUps")
         newStudent["First"] = firstName.text
         newStudent["Last"] = lastName.text
         newStudent["Email"] = emailField.text
@@ -78,6 +84,20 @@ class ViewController: UIViewController {
             } else {
                 
             }
+        }*/
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "goToResume") {
+            
+            let destination = segue.destinationViewController as! ResumeViewController
+            
+            let info:Info = Info()
+            info.firstName = firstName.text!
+            info.lastName = lastName.text!
+            info.email = emailField.text!
+            
+            destination.info = info
         }
     }
 
