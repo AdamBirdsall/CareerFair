@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 import AddressBookUI
-
+import Firebase
 
 /*
 *
@@ -18,7 +18,7 @@ import AddressBookUI
 *
 */
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -165,6 +165,19 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluateWithObject(testStr)
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.firstName.resignFirstResponder()
+        self.lastName.resignFirstResponder()
+        self.emailField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.firstName.resignFirstResponder()
+        self.lastName.resignFirstResponder()
+        self.emailField.resignFirstResponder()
+        return true
     }
     
     /*
