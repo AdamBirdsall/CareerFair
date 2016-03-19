@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B12D0911C9A176B002B2388 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B12D0901C9A176B002B2388 /* Firebase.framework */; };
-		6B12D0931C9A1788002B2388 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B12D0921C9A1788002B2388 /* libc++.tbd */; };
-		6B12D0951C9A1795002B2388 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B12D0941C9A1795002B2388 /* libicucore.tbd */; };
 		6B60DC2D1C973432001FF579 /* TM logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6B60DC2C1C973432001FF579 /* TM logo.svg */; };
 		6B60DC2F1C978292001FF579 /* HttpPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60DC2E1C978292001FF579 /* HttpPost.swift */; };
 		6BD5D9301C8A423D008CE7FA /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD5D92F1C8A423D008CE7FA /* Info.swift */; };
@@ -53,9 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B12D0901C9A176B002B2388 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../../../../DevelopmentTools/Firebase.framework; sourceTree = "<group>"; };
-		6B12D0921C9A1788002B2388 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		6B12D0941C9A1795002B2388 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		6B60DC2C1C973432001FF579 /* TM logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TM logo.svg"; sourceTree = "<group>"; };
 		6B60DC2E1C978292001FF579 /* HttpPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpPost.swift; sourceTree = "<group>"; };
 		6BD5D92F1C8A423D008CE7FA /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
@@ -96,9 +90,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B12D0951C9A1795002B2388 /* libicucore.tbd in Frameworks */,
-				6B12D0931C9A1788002B2388 /* libc++.tbd in Frameworks */,
-				6B12D0911C9A176B002B2388 /* Firebase.framework in Frameworks */,
 				6BEA49221C87A16E0099BA1A /* libsqlite3.tbd in Frameworks */,
 				6BEA49201C87A1650099BA1A /* libz.tbd in Frameworks */,
 				6BEA49161C87A15B0099BA1A /* AudioToolbox.framework in Frameworks */,
@@ -206,9 +197,6 @@
 		6BEA49001C87A1240099BA1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6B12D0941C9A1795002B2388 /* libicucore.tbd */,
-				6B12D0921C9A1788002B2388 /* libc++.tbd */,
-				6B12D0901C9A176B002B2388 /* Firebase.framework */,
 				6BEA49211C87A16E0099BA1A /* libsqlite3.tbd */,
 				6BEA491F1C87A1650099BA1A /* libz.tbd */,
 				6BEA490D1C87A15B0099BA1A /* AudioToolbox.framework */,

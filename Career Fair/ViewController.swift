@@ -9,7 +9,6 @@
 import UIKit
 import CoreLocation
 import AddressBookUI
-import Firebase
 
 /*
 *
@@ -31,17 +30,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var employerView: UIView!
     @IBOutlet weak var gradePicker: UIPickerView!
     
-    var pickerDataSource = ["Select Grade","A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F"];
+    var pickerDataSource = ["Select Grade","A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F"]
     var grade : String!
     let locationManager = CLLocationManager()
+    let fireBaseUrl = "https://careerfair.firebaseio.com/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.employerView.alpha = 0.0
         
-        self.gradePicker.dataSource = self;
-        self.gradePicker.delegate = self;
+        self.gradePicker.dataSource = self
+        self.gradePicker.delegate = self
 
         // Rounds the corners of the submit buttons
         self.studentSubmitButton.layer.cornerRadius = 10
