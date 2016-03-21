@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6B60DC2D1C973432001FF579 /* TM logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6B60DC2C1C973432001FF579 /* TM logo.svg */; };
 		6B60DC2F1C978292001FF579 /* HttpPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60DC2E1C978292001FF579 /* HttpPost.swift */; };
+		6BBECD551CA0686E003F4217 /* grfx-ticketmaster-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBECD541CA0686E003F4217 /* grfx-ticketmaster-logo.png */; };
 		6BD5D9301C8A423D008CE7FA /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD5D92F1C8A423D008CE7FA /* Info.swift */; };
 		6BE5FB451C879154006FDCC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5FB441C879154006FDCC2 /* AppDelegate.swift */; };
 		6BE5FB471C879154006FDCC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE5FB461C879154006FDCC2 /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		6B60DC2C1C973432001FF579 /* TM logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TM logo.svg"; sourceTree = "<group>"; };
 		6B60DC2E1C978292001FF579 /* HttpPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpPost.swift; sourceTree = "<group>"; };
+		6BBECD541CA0686E003F4217 /* grfx-ticketmaster-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx-ticketmaster-logo.png"; sourceTree = "<group>"; };
 		6BD5D92F1C8A423D008CE7FA /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
 		6BE5FB411C879154006FDCC2 /* Career Fair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Career Fair.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BE5FB441C879154006FDCC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		6B60DC311C978A86001FF579 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6BBECD541CA0686E003F4217 /* grfx-ticketmaster-logo.png */,
 				6BE5FB4B1C879154006FDCC2 /* Assets.xcassets */,
 				6BE5FB4D1C879154006FDCC2 /* LaunchScreen.storyboard */,
 				6BE5FB501C879154006FDCC2 /* Info.plist */,
@@ -324,6 +327,7 @@
 				6BE5FB4F1C879154006FDCC2 /* LaunchScreen.storyboard in Resources */,
 				6B60DC2D1C973432001FF579 /* TM logo.svg in Resources */,
 				6BEA48F31C87A0010099BA1A /* logo.png in Resources */,
+				6BBECD551CA0686E003F4217 /* grfx-ticketmaster-logo.png in Resources */,
 				6BEA48F11C8798880099BA1A /* tmpicture.png in Resources */,
 				6BE5FB4C1C879154006FDCC2 /* Assets.xcassets in Resources */,
 				6BE5FB4A1C879154006FDCC2 /* Main.storyboard in Resources */,
