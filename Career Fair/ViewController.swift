@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import AddressBookUI
+import Firebase
 
 /*
 *
@@ -17,7 +18,7 @@ import AddressBookUI
 *
 */
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
@@ -29,6 +30,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var studentView: UIView!
     @IBOutlet weak var employerView: UIView!
     @IBOutlet weak var gradePicker: UIPickerView!
+    
+    @IBOutlet weak var photoImageView: UIImageView!
+    var imagePicker: UIImagePickerController = UIImagePickerController()
     
     var pickerDataSource = ["Select Grade","A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F"]
     var grade : String!
@@ -93,7 +97,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             self.presentViewController(alert, animated: true){}
         } else {
             
-            
+            self.hideKeyboard()
             // The animations fade the views in and out for the student and employer
             
             let alert = UIAlertController(title: "Thank you!", message:"Please give iPad back to employer.", preferredStyle: .Alert)
@@ -119,7 +123,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBAction func employerSubmit(sender: AnyObject) {
         
-        let url = NSURL(string: "https://docs.google.com/forms/d/1uWmQ9CmC_As92Xv4jr33fT_1al7P2S2P1TGAGX4LvJs/formResponse")
+//        let url = NSURL(string: "https://docs.google.com/forms/d/1uWmQ9CmC_As92Xv4jr33fT_1al7P2S2P1TGAGX4LvJs/formResponse")
         
         // If the user doesn't select from the picker, 'grade' never gets assigned
         if (self.grade == nil) {
@@ -128,10 +132,19 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         }
         
         // This makes the call to send the data to the google spreadsheet
-        let postRequest : HttpPost = HttpPost(firstName: self.firstName.text!, lastName: self.lastName.text!, emailString: self.emailField.text!, commentsString: self.comments.text!, gradeString: self.grade, locationString: "Scottsdale", urlString: url!)
-        postRequest.sendRequest()
+//        let postRequest : HttpPost = HttpPost(firstName: self.firstName.text!, lastName: self.lastName.text!, emailString: self.emailField.text!, commentsString: self.comments.text!, gradeString: self.grade, locationString: "Scottsdale", urlString: url!)
+//        postRequest.sendRequest()
         
+        var data: NSData = NSData()
         
+        if let image = photoImageView.image {
+            data = UIImageJPEGRepresentation(image,0.1)!
+        }
+                
+        let fireBaseRequest : FirebasePost = FirebasePost(firstName: self.firstName.text!, lastName: self.lastName.text!, emailString: self.emailField.text!, commentsString: self.comments.text!, gradeString: self.grade, locationString: "Scottsdale", resumeImage: data)
+        fireBaseRequest.sendRequest()
+        
+        self.hideKeyboard()
         // Animation bringing the student view back and resetting all of the text fields
         
         let alert = UIAlertController(title: "Thank you!", message:nil, preferredStyle: .Alert)
@@ -171,13 +184,22 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         self.firstName.resignFirstResponder()
         self.lastName.resignFirstResponder()
         self.emailField.resignFirstResponder()
+        self.comments.resignFirstResponder()
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.firstName.resignFirstResponder()
         self.lastName.resignFirstResponder()
         self.emailField.resignFirstResponder()
+        self.comments.resignFirstResponder()
         return true
+    }
+    
+    func hideKeyboard() {
+        self.firstName.resignFirstResponder()
+        self.lastName.resignFirstResponder()
+        self.emailField.resignFirstResponder()
+        self.comments.resignFirstResponder()
     }
     
     /*
@@ -205,22 +227,36 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             self.grade = ""
         }
         if ((grade.rangeOfString("+")) != nil) {
-            self.grade = grade.stringByReplacingOccurrencesOfString("+", withString: "%2B")
+            //self.grade = grade.stringByReplacingOccurrencesOfString("+", withString: "%2B")
         }
     }
     
    
-    /*
-    *
-    * Was thinking about doing location to get the current location, but there might be easier ways
-    *
-    */
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations)
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        photoImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print(error)
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK:- Add Picture
+    
+    @IBAction func addPicture(sender: AnyObject) {
+        
+        if(UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)) {
+            imagePicker =  UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .Camera
+            
+            presentViewController(imagePicker, animated: true, completion: nil)
+        } else {
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .PhotoLibrary
+            imagePicker.delegate = self
+            presentViewController(imagePicker, animated: true, completion:nil)
+        }
     }
 }
 
