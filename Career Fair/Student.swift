@@ -23,7 +23,7 @@ struct Student {
     let date: String!
     let image: NSData!
     
-    // Initialize from arbitrary data
+    // Initialize from data
     init(key: String = "", firstName: String, lastName: String, emailString: String, commentsString: String, gradeString: String, locationString: String, dateString: String, resumeImage: NSData) {
         self.key = key
         self.ref = nil

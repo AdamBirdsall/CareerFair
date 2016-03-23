@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B60DC2D1C973432001FF579 /* TM logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6B60DC2C1C973432001FF579 /* TM logo.svg */; };
 		6B60DC2F1C978292001FF579 /* HttpPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60DC2E1C978292001FF579 /* HttpPost.swift */; };
 		6BBECD551CA0686E003F4217 /* grfx-ticketmaster-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBECD541CA0686E003F4217 /* grfx-ticketmaster-logo.png */; };
 		6BBECD631CA08C8F003F4217 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBECD621CA08C8F003F4217 /* Firebase.framework */; };
@@ -56,7 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6B60DC2C1C973432001FF579 /* TM logo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "TM logo.svg"; sourceTree = "<group>"; };
 		6B60DC2E1C978292001FF579 /* HttpPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpPost.swift; sourceTree = "<group>"; };
 		6BBECD541CA0686E003F4217 /* grfx-ticketmaster-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx-ticketmaster-logo.png"; sourceTree = "<group>"; };
 		6BBECD621CA08C8F003F4217 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../../../../DevelopmentTools/Firebase.framework; sourceTree = "<group>"; };
@@ -80,10 +78,6 @@
 		6BE5FB661C879154006FDCC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BEA48F01C8798880099BA1A /* tmpicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmpicture.png; sourceTree = "<group>"; };
 		6BEA48F21C87A0010099BA1A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
-		6BEA49031C87A1300099BA1A /* ParseTwitterUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseTwitterUtils.framework; path = "../../../../DevelopmentTools/parse-library-1.10.0/ParseTwitterUtils.framework"; sourceTree = "<group>"; };
-		6BEA49041C87A1300099BA1A /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../../DevelopmentTools/parse-library-1.10.0/ParseUI.framework"; sourceTree = "<group>"; };
-		6BEA49051C87A1300099BA1A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../DevelopmentTools/parse-library-1.10.0/Bolts.framework"; sourceTree = "<group>"; };
-		6BEA49061C87A1300099BA1A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../DevelopmentTools/parse-library-1.10.0/Parse.framework"; sourceTree = "<group>"; };
 		6BEA490D1C87A15B0099BA1A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		6BEA490E1C87A15B0099BA1A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6BEA490F1C87A15B0099BA1A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -158,7 +152,6 @@
 				6BEA48F01C8798880099BA1A /* tmpicture.png */,
 				6BEA48F21C87A0010099BA1A /* logo.png */,
 				6BD5D92F1C8A423D008CE7FA /* Info.swift */,
-				6B60DC2C1C973432001FF579 /* TM logo.svg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,10 +230,6 @@
 				6BEA49131C87A15B0099BA1A /* Security.framework */,
 				6BEA49141C87A15B0099BA1A /* StoreKit.framework */,
 				6BEA49151C87A15B0099BA1A /* SystemConfiguration.framework */,
-				6BEA49031C87A1300099BA1A /* ParseTwitterUtils.framework */,
-				6BEA49041C87A1300099BA1A /* ParseUI.framework */,
-				6BEA49051C87A1300099BA1A /* Bolts.framework */,
-				6BEA49061C87A1300099BA1A /* Parse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,7 +340,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BE5FB4F1C879154006FDCC2 /* LaunchScreen.storyboard in Resources */,
-				6B60DC2D1C973432001FF579 /* TM logo.svg in Resources */,
 				6BEA48F31C87A0010099BA1A /* logo.png in Resources */,
 				6BBECD551CA0686E003F4217 /* grfx-ticketmaster-logo.png in Resources */,
 				6BEA48F11C8798880099BA1A /* tmpicture.png in Resources */,
