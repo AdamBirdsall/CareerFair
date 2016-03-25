@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D6B57BD1CA5E13500027716 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6B57BC1CA5E13500027716 /* Firebase.framework */; };
 		6B60DC2F1C978292001FF579 /* HttpPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60DC2E1C978292001FF579 /* HttpPost.swift */; };
 		6BBECD551CA0686E003F4217 /* grfx-ticketmaster-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBECD541CA0686E003F4217 /* grfx-ticketmaster-logo.png */; };
-		6BBECD631CA08C8F003F4217 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBECD621CA08C8F003F4217 /* Firebase.framework */; };
 		6BBECD651CA08CB9003F4217 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBECD641CA08CB9003F4217 /* libicucore.tbd */; };
 		6BBECD671CA08CC6003F4217 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBECD661CA08CC6003F4217 /* libc++.tbd */; };
 		6BBECD691CA08F5C003F4217 /* FirebasePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBECD681CA08F5C003F4217 /* FirebasePost.swift */; };
@@ -55,9 +55,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D6B57BC1CA5E13500027716 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../../../../Downloads/Firebase.framework; sourceTree = "<group>"; };
 		6B60DC2E1C978292001FF579 /* HttpPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpPost.swift; sourceTree = "<group>"; };
 		6BBECD541CA0686E003F4217 /* grfx-ticketmaster-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx-ticketmaster-logo.png"; sourceTree = "<group>"; };
-		6BBECD621CA08C8F003F4217 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../../../../DevelopmentTools/Firebase.framework; sourceTree = "<group>"; };
 		6BBECD641CA08CB9003F4217 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		6BBECD661CA08CC6003F4217 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		6BBECD681CA08F5C003F4217 /* FirebasePost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebasePost.swift; sourceTree = "<group>"; };
@@ -96,9 +96,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D6B57BD1CA5E13500027716 /* Firebase.framework in Frameworks */,
 				6BBECD671CA08CC6003F4217 /* libc++.tbd in Frameworks */,
 				6BBECD651CA08CB9003F4217 /* libicucore.tbd in Frameworks */,
-				6BBECD631CA08C8F003F4217 /* Firebase.framework in Frameworks */,
 				6BEA49221C87A16E0099BA1A /* libsqlite3.tbd in Frameworks */,
 				6BEA49201C87A1650099BA1A /* libz.tbd in Frameworks */,
 				6BEA49161C87A15B0099BA1A /* AudioToolbox.framework in Frameworks */,
@@ -216,9 +216,9 @@
 		6BEA49001C87A1240099BA1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D6B57BC1CA5E13500027716 /* Firebase.framework */,
 				6BBECD661CA08CC6003F4217 /* libc++.tbd */,
 				6BBECD641CA08CB9003F4217 /* libicucore.tbd */,
-				6BBECD621CA08C8F003F4217 /* Firebase.framework */,
 				6BEA49211C87A16E0099BA1A /* libsqlite3.tbd */,
 				6BEA491F1C87A1650099BA1A /* libz.tbd */,
 				6BEA490D1C87A15B0099BA1A /* AudioToolbox.framework */,
@@ -302,7 +302,7 @@
 				TargetAttributes = {
 					6BE5FB401C879154006FDCC2 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = FT34PLEEM7;
+						DevelopmentTeam = W2XZ53C887;
 					};
 					6BE5FB541C879154006FDCC2 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -519,11 +519,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = /Users/Adam.Birdsall/DevelopmentTools/;
+				FRAMEWORK_SEARCH_PATHS = /Users/caleb.king/Downloads/;
 				INFOPLIST_FILE = "Career Fair/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Ticketmaster.Career-Fair";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.Ticketmaster.Career-Fair";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -538,11 +538,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = /Users/Adam.Birdsall/DevelopmentTools/;
+				FRAMEWORK_SEARCH_PATHS = /Users/caleb.king/Downloads/;
 				INFOPLIST_FILE = "Career Fair/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Ticketmaster.Career-Fair";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.Ticketmaster.Career-Fair";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -554,6 +554,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Career FairTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Ticketmaster.Career-FairTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -566,6 +567,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Career FairTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Ticketmaster.Career-FairTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -577,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "Career FairUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Ticketmaster.Career-FairUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -589,6 +592,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = "Career FairUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Ticketmaster.Career-FairUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
