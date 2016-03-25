@@ -26,6 +26,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var studentSubmitButton: UIButton!
     @IBOutlet weak var employerSubmitButton: UIButton!
     
+    @IBOutlet weak var gradSwitch: UISwitch!
+    
     @IBOutlet weak var comments: UITextView!
     @IBOutlet weak var studentView: UIView!
     @IBOutlet weak var employerView: UIView!
@@ -33,6 +35,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBOutlet weak var photoImageView: UIImageView!
     var imagePicker: UIImagePickerController = UIImagePickerController()
+    
+    var underOrGrad: String = ""
+
     
     var pickerDataSource = ["Select Grade","A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F"]
     var grade : String!
@@ -98,9 +103,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         } else {
             
             self.hideKeyboard()
+            
+            if (gradSwitch.on) {
+                self.underOrGrad = "Graduate"
+            } else {
+                self.underOrGrad = "Undergraduate"
+            }
             // The animations fade the views in and out for the student and employer
             
-            let alert = UIAlertController(title: "Thank you!", message:"Please give iPad back to employer.", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "Thank you!", message:"Please give iPad back.", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (UIAlertAction) -> Void in
                 
                 UIView.animateWithDuration(0.5, animations: {
@@ -153,7 +164,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             UIView.animateWithDuration(0.5, animations: {
                 
                 self.employerView.alpha = 0.0
-                self.firstName.text = ""
+                self.firstName.text = self.underOrGrad
                 self.lastName.text = ""
                 self.emailField.text = ""
                 self.comments.text = ""
