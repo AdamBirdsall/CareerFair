@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D48E8061CC19D7F00A74840 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D48E8051CC19D7F00A74840 /* LoginViewController.swift */; };
 		0D6B57BD1CA5E13500027716 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6B57BC1CA5E13500027716 /* Firebase.framework */; };
 		6B60DC2F1C978292001FF579 /* HttpPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60DC2E1C978292001FF579 /* HttpPost.swift */; };
 		6BBECD551CA0686E003F4217 /* grfx-ticketmaster-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBECD541CA0686E003F4217 /* grfx-ticketmaster-logo.png */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D48E8051CC19D7F00A74840 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D6B57BC1CA5E13500027716 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../../../../Downloads/Firebase.framework; sourceTree = "<group>"; };
 		6B60DC2E1C978292001FF579 /* HttpPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpPost.swift; sourceTree = "<group>"; };
 		6BBECD541CA0686E003F4217 /* grfx-ticketmaster-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grfx-ticketmaster-logo.png"; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D48E8041CC19D5200A74840 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0D48E8051CC19D7F00A74840 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		6B60DC301C978A76001FF579 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 		6BE5FB431C879154006FDCC2 /* Career Fair */ = {
 			isa = PBXGroup;
 			children = (
+				0D48E8041CC19D5200A74840 /* Login */,
 				6BBECD6A1CA0917F003F4217 /* Models */,
 				6B60DC301C978A76001FF579 /* Main */,
 				6B60DC311C978A86001FF579 /* Supporting Files */,
@@ -369,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D48E8061CC19D7F00A74840 /* LoginViewController.swift in Sources */,
 				6BE5FB471C879154006FDCC2 /* ViewController.swift in Sources */,
 				6BBECD6C1CA09190003F4217 /* Student.swift in Sources */,
 				6B60DC2F1C978292001FF579 /* HttpPost.swift in Sources */,
