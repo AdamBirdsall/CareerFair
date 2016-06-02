@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MessageUI
 
 class StudentListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -17,9 +18,14 @@ class StudentListViewController: UIViewController, UITableViewDelegate, UITableV
     var items = [NSDictionary]()
     
     let firebase = Firebase(url:"https://careerfair.firebaseio.com/students")
+    
+    var isEditting : Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.mainTableView.allowsMultipleSelectionDuringEditing = true
+
         loadDataFromFirebase()
     }
     
@@ -53,31 +59,20 @@ class StudentListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = UIColor.clearColor()
-//        cell.textLabel?.alpha = 0.0
-//        cell.detailTextLabel?.alpha = 0.0
-//        
-//        let alert = UIAlertController(title: "Are you a student?", message:"", preferredStyle: .Alert)
-//        
-//        alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (UIAlertAction) -> Void in
-//            
-//        }))
-//        
-//        alert.addAction(UIAlertAction(title: "No", style: .Default, handler: { (UIAlertAction) -> Void in
-//            
-//            
-//            UIView.animateWithDuration(0.3, animations: {
-//                
-//                cell.textLabel?.alpha = 1.0
-//                cell.detailTextLabel?.alpha = 1.0
-//                
-//            })
-//            
-//            
-//        }))
-//        
-//        self.presentViewController(alert, animated: true){}
     }
     
+    
+//    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    
+//        let cell = tableView.cellForRowAtIndexPath(indexPath)
+//        cell?.backgroundColor = UIColor.clearColor()
+//
+//        if (self.isEditting == true) {
+//            cell?.backgroundColor = UIColor.clearColor()
+//        } else {
+//            performSegueWithIdentifier("viewDetails", sender: nil)
+//        }
+//    }
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -97,22 +92,47 @@ class StudentListViewController: UIViewController, UITableViewDelegate, UITableV
         
         let mainIndex = indexPath.row
         
-//         Configure the cell...
-        cell.textLabel?.text = items[mainIndex]["firstName"] as? String
-        cell.detailTextLabel?.text = items[mainIndex]["lastName"] as? String
+        // Configure the cell...
+        cell.textLabel?.text = items[mainIndex]["fullName"] as? String
+        cell.detailTextLabel?.text = items[mainIndex]["email"] as? String
         
         loadingIndicator.stopAnimating()
         self.mainTableView.alpha = 1.0
         
-//        cell.textLabel?.text = "Main"
-//        cell.detailTextLabel?.text = "Detail"
-        
         return cell
     }
-    
+        
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "showDetails") {
+        if (segue.identifier == "viewDetails") {
             
+            
+            let destination = segue.destinationViewController as! StudentDetailsViewController
+            
+            let indexPath = self.mainTableView.indexPathForSelectedRow!
+            
+            // get object from your dataparse array using the indexPath
+            let groupObject = self.items[indexPath.row]
+            
+            let info:Info = Info()
+            info.firstName = groupObject["firstName"] as! String
+            info.lastName = groupObject["lastName"] as! String
+            info.email = groupObject["email"] as! String
+            info.grade = groupObject["grade"] as! String
+            info.resume = groupObject["resume"] as! String
+            info.graduate = groupObject["gradOrUnder"] as! String
+            
+            destination.info = info
         }
     }
+    
+    @IBAction func editRows(sender: AnyObject) {
+        if (mainTableView.editing == true) {
+            self.mainTableView.setEditing(false, animated: true)
+            self.isEditting = false
+            return
+        }
+        self.isEditting = true
+        self.mainTableView.setEditing(true, animated: true)
+    }
+    
 }

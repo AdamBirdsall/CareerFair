@@ -65,28 +65,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // Name
-    // entry.2005620554
-    
-    // Email
-    // entry.1045781291
-    
-    // Comments
-    // entry.839337160
-    
-    // Grade
-    // entry.1815108059
-    
-    // Location
-    // entry.879470930
-    
-    // Date of Sign Up
-    // entry.1424298971
-    
-    // Final URL
-    // https://docs.google.com/forms/d/1uWmQ9CmC_As92Xv4jr33fT_1al7P2S2P1TGAGX4LvJs/formResponse? +
-    // entry.2005620554=AdamAdam&entry.1045781291=Adam@gmail.com&entry.839337160=test&submit=Submit
     
     @IBAction func clickSubmit(sender: AnyObject) {
         
@@ -134,17 +112,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     @IBAction func employerSubmit(sender: AnyObject) {
         
-//        let url = NSURL(string: "https://docs.google.com/forms/d/1uWmQ9CmC_As92Xv4jr33fT_1al7P2S2P1TGAGX4LvJs/formResponse")
-        
         // If the user doesn't select from the picker, 'grade' never gets assigned
         if (self.grade == nil) {
             // This makes sure there isn't an error for undefined grade
             self.grade = ""
         }
-        
-        // This makes the call to send the data to the google spreadsheet
-//        let postRequest : HttpPost = HttpPost(firstName: self.firstName.text!, lastName: self.lastName.text!, emailString: self.emailField.text!, commentsString: self.comments.text!, gradeString: self.grade, locationString: "Scottsdale", urlString: url!)
-//        postRequest.sendRequest()
         
         var data: NSData = NSData()
         
@@ -152,7 +124,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             data = UIImageJPEGRepresentation(image,0.1)!
         }
                 
-        let fireBaseRequest : FirebasePost = FirebasePost(firstName: self.firstName.text!, lastName: self.lastName.text!, emailString: self.emailField.text!, commentsString: self.comments.text!, gradeString: self.grade, locationString: "Scottsdale", resumeImage: data)
+        let fireBaseRequest : FirebasePost = FirebasePost(firstName: self.firstName.text!, lastName: self.lastName.text!, emailString: self.emailField.text!, commentsString: self.comments.text!, gradeString: self.grade, locationString: "Scottsdale", resumeImage: data, gradOrUnder: self.underOrGrad)
         fireBaseRequest.sendRequest()
         
         self.hideKeyboard()
@@ -161,14 +133,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         let alert = UIAlertController(title: "Thank you!", message:nil, preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (UIAlertAction) -> Void in
             
+            self.gradePicker.selectRow(0, inComponent: 0, animated: false)
+
             UIView.animateWithDuration(0.5, animations: {
                 
                 self.employerView.alpha = 0.0
-                self.firstName.text = self.underOrGrad
+                self.firstName.text = ""
                 self.lastName.text = ""
                 self.emailField.text = ""
                 self.comments.text = ""
-                self.gradePicker.selectRow(0, inComponent: 0, animated: false)
                 
                 UIView.animateWithDuration(0.5, animations: {
                     

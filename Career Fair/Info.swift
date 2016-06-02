@@ -13,4 +13,7 @@ class Info {
     var firstName: String = ""
     var lastName: String = ""
     var email: String = ""
+    var grade: String = ""
+    var resume: String = ""
+    var graduate: String = ""
 }

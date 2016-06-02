@@ -40,8 +40,9 @@ class FirebasePost {
     var grade: String
     var location: String
     var resume: NSData
+    var graduate: String
     
-    init (firstName: String, lastName: String, emailString: String, commentsString: String, gradeString: String, locationString: String, resumeImage: NSData) {
+    init (firstName: String, lastName: String, emailString: String, commentsString: String, gradeString: String, locationString: String, resumeImage: NSData, gradOrUnder: String) {
         
         first = firstName
         last = lastName
@@ -50,6 +51,7 @@ class FirebasePost {
         grade = gradeString
         location = locationString
         resume = resumeImage
+        graduate = gradOrUnder
     }
     
     /*
@@ -63,16 +65,10 @@ class FirebasePost {
         let date:String = getDate()
         
         let rootRef = Firebase(url: "https://careerfair.firebaseio.com/students/\(self.first)%20\(self.last)")
-        
-//        if let image = photoImageView.image {
-//            resume = UIImageJPEGRepresentation(image,0.1)!
-//        }
-//        let base64String = data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
-        
 
-        let groceryItem = Student(firstName: self.first, lastName: self.last, emailString: self.email, commentsString: self.comments, gradeString: self.grade, locationString: "Scottsdale", dateString: date, resumeImage: resume)
+        let newStudent = Student(firstName: self.first, lastName: self.last, emailString: self.email, commentsString: self.comments, gradeString: self.grade, locationString: "Scottsdale", dateString: date, resumeImage: resume, graduateStudent: graduate)
         
-        rootRef.setValue(groceryItem.toAnyObject())
+        rootRef.setValue(newStudent.toAnyObject())
         
         return true
     }
