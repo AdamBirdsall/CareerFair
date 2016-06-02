@@ -12,7 +12,6 @@ import Firebase
 struct Student {
     
     let key: String!
-    let ref: Firebase?
     
     let firstName: String!
     let lastName: String!
@@ -22,11 +21,12 @@ struct Student {
     let location: String!
     let date: String!
     let image: NSData!
+    let fullName: String!
+    let gradOrUnder: String!
     
     // Initialize from data
-    init(key: String = "", firstName: String, lastName: String, emailString: String, commentsString: String, gradeString: String, locationString: String, dateString: String, resumeImage: NSData) {
+    init(key: String = "", firstName: String, lastName: String, emailString: String, commentsString: String, gradeString: String, locationString: String, dateString: String, resumeImage: NSData, graduateStudent: String) {
         self.key = key
-        self.ref = nil
         
         self.firstName = firstName
         self.lastName = lastName
@@ -36,7 +36,23 @@ struct Student {
         self.location = locationString
         self.date = dateString
         self.image = resumeImage
+        self.fullName = "\(firstName) \(lastName)"
+        self.gradOrUnder = graduateStudent
         
+    }
+    
+    init(snapshot: NSDictionary) {
+        key = snapshot["key"] as! String
+        firstName = snapshot["firstName"] as! String
+        lastName = snapshot["lastName"] as! String
+        grade = snapshot["grade"] as! String
+        email = snapshot["email"] as! String
+        comments = snapshot["comments"] as! String
+        location = snapshot["location"] as! String
+        date = snapshot["date"] as! String
+        image = snapshot["resume"] as! NSData
+        fullName = snapshot["fullName"] as! String
+        gradOrUnder = snapshot["gradOrUnder"] as! String
     }
     
     /*
@@ -61,7 +77,9 @@ struct Student {
             "grade": grade,
             "location": location,
             "date": date,
-            "resume": base64String
+            "resume": base64String,
+            "fullName": fullName,
+            "gradOrUnder": gradOrUnder
         ]
     }
     
